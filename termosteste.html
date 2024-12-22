@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceitação dos Termos e Condições</title>
+    <style>
+        .terms-container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+        }
+        .terms-content {
+            max-height: 150px;
+            overflow-y: scroll;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            padding: 10px;
+            font-size: 14px;
+        }
+        #accept-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="terms-container">
+    <h3>Termos e Condições</h3>
+    <div class="terms-content">
+        <p>Ao usar este serviço, você concorda com os seguintes termos e condições...</p>
+        <!-- Conteúdo adicional dos termos pode ser adicionado aqui -->
+    </div>
+    
+    <label>
+        <input type="checkbox" id="accept-checkbox">
+        Eu aceito os termos e condições
+    </label>
+    <br><br>
+    
+    <button id="accept-btn" disabled>Continuar</button>
+</div>
+
+<script>
+    const checkbox = document.getElementById("accept-checkbox");
+    const button = document.getElementById("accept-btn");
+
+    checkbox.addEventListener("change", function() {
+        button.disabled = !checkbox.checked;
+    });
+</script>
+
+</body>
+</html>

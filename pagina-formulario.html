@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Nacionalidade</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="nacionalidade">Nacionalidade:</label>
+        <select id="nacionalidade" name="nacionalidade" onchange="atualizarCampos()">
+            <option value="">Selecione...</option>
+            <option value="angolana">Angolana</option>
+            <option value="outra">Outra</option>
+        </select>
+
+        <div id="campo-outra-nacionalidade" class="hidden">
+            <label for="outraNacionalidade">Especifique sua nacionalidade:</label>
+            <input type="text" id="outraNacionalidade" name="outraNacionalidade" placeholder="Digite aqui">
+        </div>
+        
+        <div id="campo-provincia" class="hidden">
+            <label for="provincia">Província:</label>
+            <select id="provincia" name="provincia">
+                <option value="">Selecione...</option>
+                <option value="luanda">Luanda</option>
+                <option value="benguela">Benguela</option>
+                <option value="huambo">Huambo</option>
+                <option value="huila">Huíla</option>
+            </select>
+        </div>
+
+       
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function atualizarCampos() {
+            const nacionalidade = document.getElementById('nacionalidade').value;
+            const campoProvincia = document.getElementById('campo-provincia');
+            const campoOutraNacionalidade = document.getElementById('campo-outra-nacionalidade');
+
+            if (nacionalidade === "angolana") {
+                campoProvincia.classList.remove('hidden');
+                campoOutraNacionalidade.classList.add('hidden');
+            } else if (nacionalidade === "outra") {
+                campoProvincia.classList.add('hidden');
+                campoOutraNacionalidade.classList.remove('hidden');
+            } else {
+                campoProvincia.classList.add('hidden');
+                campoOutraNacionalidade.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

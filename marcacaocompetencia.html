@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcação</title>
+    <link rel="stylesheet" href="css/marcacao1.css">
+    <style>
+        .terms-container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+        }
+        .terms-content {
+            max-height: 150px;
+            overflow-y: scroll;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            padding: 10px;
+            font-size: 14px;
+        }
+        #accept-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<section class="container">
+    <header>Formulário para Marcação</header>
+    <form action="" class="form">
+        <div class="input-box service">
+            <label for="">Designação do curso
+            </label>
+            <input type="text" id="itemSelecionado" name="itemSelecionado" placeholder="Que formação pretendes" required>
+            <div class="input-box service">
+                <label for="">Tempo de Formação
+                </label>
+                <div class="column">
+                    <div class="select-box">
+                        <select id="curso-subopcoes" name="curso-subopcoes" required>
+                            <option value="" hidden>Por Modúlo</option>
+                            <!-- Subopções para Desenvolvimento -->
+                            <option value="wordpress" class="desenvolvimento">1Módulo(4h--------------200.000kz)</option>
+                            <option value="javascript" class="desenvolvimento">2Módulos(8h-------------400.000kz)</option>
+                            <option value="python" class="desenvolvimento">3Módulos (12h---------------800.000kz)</option>
+                            <option value="uxui" class="design">4Módulos(16h------------120.000.000kz)</option>  
+                          </select>
+                        </div>
+                        <div class="select-box">
+                            <select id="curso-subopcoes" name="curso-subopcoes" required>
+                                <option value="" hidden>Por Horas</option>
+                                <!-- Subopções para Desenvolvimento -->
+                                <option value="wordpress" class="desenvolvimento">1h-----------------------------------50.000kz</option>
+                                <option value="wordpress" class="desenvolvimento">2h----------------------------------100.000kz</option>
+                              </select>
+                            </div>
+                </div>
+                </div>
+            <div class="input-box service">
+                <label for="">Período de realização
+                </label>
+                <div class="column">
+                    <input type="date" placeholder="Data" required>
+                    <input type="time" placeholder="Horário" required>
+                </div>
+                </div>
+            </div>
+        <div class="input-box service">
+            <label for="">Identificação do Formando</label>
+            <div class="column">
+                <input type="text" placeholder="Nome Completo"  required>
+                <input type="text"   placeholder="Morada" required>
+            </div>
+            <div class="column">
+                <input type="text" placeholder="Nacionalidade" required>
+                <div class="select-box">
+                    <select id="curso-subopcoes" name="curso-subopcoes" required>
+                        <option value="" hidden>Descrição</option>
+                        <!-- Subopções para Desenvolvimento -->
+                        <option value="wordpress" class="desenvolvimento">Estudante</option>
+                        <option value="javascript" class="desenvolvimento">Profisional</option>
+                        <option value="python" class="desenvolvimento">Empresa</option>  
+                      </select>
+                    </div>
+            </div>
+            <div class="column">
+                <input type="text" placeholder="Identificação BI nº" required>
+                <input type="text" placeholder="Passaporte Nº(Estrangeiros)" required>
+            </div>
+            <div class="column">
+                <input type="email" placeholder="Email" required>
+                <input type="number" placeholder="Telefone" required>
+            </div>
+            <div class="input-box service">
+                <div class="column">
+                        <div class="select-box">
+                    <select id="especialidade" name="especialidade" onchange="mostrarEspecialidade()"required>
+                        <option value="" hidden>Habilitações Literárias</option>
+                        <!-- Subopções para Desenvolvimento -->
+                        <option value="especialidade1" class="desenvolvimento">Ensino secundário</option>
+                        <option value="especialidade1" class="desenvolvimento">Ensino Médio</option>
+                        <option value="especialidade1" class="desenvolvimento">Ensino Superior</option>
+                        <option value="especialidade1" class="design">Mestrado</option>
+                        <option value="especialidade1" class="design">Doutoramento</option>  
+                      </select>
+                      
+                      <div id="campoEspecialidade1" style="display:none;">
+                        <label for="especialidade1">Campo para Opção 1:</label>
+                        <input type="text" id="especialidade1" name="especialidade1" />
+                      </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="input-box service">
+                <label for="">Situação Profissional
+                </label>
+                <div class="column">
+                    <input type="text" placeholder="Categoria Profissional" required>
+                    <input type="text" placeholder="Especialidade" required>
+                </div>
+                <div class="column">
+                    <input type="text" placeholder="Serviço" required>
+                    <input type="text" placeholder="Telefone" required>
+                </div>
+                </div>
+               
+                   
+        <div class="desc-box">
+            <h3>Descrição</h3>
+            <div class="desc-option">
+                <div class="desc">
+                    <input type="radio" id="check" name="desc" checked/>
+                    <label for="check-estudante">Estudante</label>
+                </div>
+                <div class="desc">
+                    <input type="radio" id="check" name="desc"/>
+                    <label for="check-profisional">Profissional</label>
+                </div>
+                <div class="desc">
+                    <input type="radio" id="check" name="desc"/>
+                    <label for="check-empresa">Empresa</label>
+                </div>
+            </div>
+        </div>
+            
+    <label>
+        <input type="checkbox" id="accept-checkbox" style="margin-top: 20px;">
+        Concordo Com os <a href="termos e condições.pdf" style="text-decoration: none;">Termos & Condições</a>
+    </label>
+    <br><br>
+    <button id="accept-btn" disabled>CONCLUIR</button>
+<script>
+    const checkbox = document.getElementById("accept-checkbox");
+    const button = document.getElementById("accept-btn");
+
+    checkbox.addEventListener("change", function() {
+        button.disabled = !checkbox.checked;
+    });
+</script>
+    </form>
+    <script>
+        // Recupera o valor armazenado no Local Storage
+        const itemSelecionado = localStorage.getItem('itemSelecionado');
+        // Preenche o campo do formulário com o item selecionado, se houver um valor
+        if (itemSelecionado) {
+            document.getElementById('itemSelecionado').value = itemSelecionado;
+            // Limpa o valor do Local Storage após o uso
+            localStorage.removeItem('itemSelecionado');
+        }
+    </script>
+
+</section>
+    
+</body>
+</html>

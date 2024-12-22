@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Nacionalidades</title>
+</head>
+<body>
+<form>
+  <label for="especialidade">Escolha uma opção:</label>
+  <select id="especialidade" name="especialidade" onchange="mostrarEspecialidade()">
+    <option value="">Selecione</option>
+    <option value="especialidade1">Opção 1</option>
+    <option value="especialidade2">Opção 2</option>
+  </select>
+
+  <div id="campoEspecialidade1" style="display:none;">
+    <label for="especialidade1">Campo para Opção 1:</label>
+    <input type="text" id="especialidade1" name="especialidade1" />
+  </div>
+
+  <div id="campoEspecialidade2" style="display:none;">
+    <label for="campo2">Campo para Opção 2:</label>
+    <input type="text" id="especialidade2" name="especialidade2" />
+  </div>
+</form>
+
+<script>
+  function mostrarEspecialidade() {
+    var especialidade = document.getElementById("especialidade").value;
+
+    document.getElementById("campoEspecialidade1").style.display = especialidade === "especialidade1" ? "block" : "none";
+    document.getElementById("campoEspecialidade2").style.display = especialidade === "especialidade2" ? "block" : "none";
+  }
+</script>
+</body>
+</html>

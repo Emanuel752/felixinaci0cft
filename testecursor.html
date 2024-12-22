@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário com Efeito Deslizante</title>
+<style>
+  /* Estilos básicos */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Botão para abrir o formulário */
+  .botao-formulario {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px;
+  }
+
+  /* Container para o formulário que desliza */
+  .formulario-overlay {
+    position: fixed;
+    top: -100%; /* Escondido acima da página inicialmente */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: top 0.5s ease, opacity 0.5s ease;
+  }
+
+  /* Conteúdo do formulário */
+  .formulario-conteudo {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  /* Botão de fechar */
+  .fechar {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+
+<button class="botao-formulario" onclick="abrirFormulario()">Abrir Formulário</button>
+
+<!-- Overlay do formulário deslizante -->
+<div id="formularioOverlay" class="formulario-overlay">
+  <div class="formulario-conteudo">
+    <button class="fechar" onclick="fecharFormulario()">X</button>
+    <h2>Formulário de Contato</h2>
+    <form>
+      <label for="nome">Nome:</label><br>
+      <input type="text" id="nome" name="nome" required><br><br>
+      <label for="email">E-mail:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="mensagem">Mensagem:</label><br>
+      <textarea id="mensagem" name="mensagem" required></textarea><br><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function abrirFormulario() {
+  const overlay = document.getElementById('formularioOverlay');
+  overlay.style.top = '0'; // Traz o formulário para a tela
+  overlay.style.opacity = '1'; // Tornar o formulário visível
+}
+
+function fecharFormulario() {
+  const overlay = document.getElementById('formularioOverlay');
+  overlay.style.top = '-100%'; // Envia o formulário para fora da tela
+  overlay.style.opacity = '0'; // Torna o formulário invisível
+}
+</script>
+
+</body>
+</html>
