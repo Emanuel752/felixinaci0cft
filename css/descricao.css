@@ -1,0 +1,29 @@
+.service-img {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Imagem */
+  .service-img img {
+    display: block;
+    width: 100%; /* Ajuste o tamanho da imagem conforme necessário */
+  }  
+  /* Descrição */
+  .descricao {
+    position: absolute;
+    bottom: 10px; /* Distância da parte inferior da imagem */
+    left: 0;
+    right: 0;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+    color: #fff; /* Cor do texto */
+    text-align: none;
+    padding: 10px;
+    opacity: 0; /* Invisível inicialmente */
+    transition: opacity 0.3s; /* Suavidade na transição */
+    border-radius: 15px 15px 15px;
+  }
+   /* Mostrar descrição ao passar o cursor */
+   .service-img:hover .descricao {
+    opacity: 1; /* Visível ao passar o cursor */
+  }

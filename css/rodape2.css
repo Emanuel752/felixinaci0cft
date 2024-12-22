@@ -1,0 +1,12 @@
+.rodape {
+  text-align: center;
+  background-color: #ddd;/* Cor de fundo do rodapé */
+  padding: 10px 0;
+  font-size: 14px;
+  color: #ddd; /* Cor do texto */
+  border-top: 1px solid #ddd; /* Linha acima do rodapé */
+}
+
+.rodape p {
+  margin: 0; /* Remove margens do parágrafo */
+}
